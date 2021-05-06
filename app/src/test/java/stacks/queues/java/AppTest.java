@@ -12,22 +12,26 @@ public class AppTest {
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
 
-    @Test
-    public void isInitializedEmpty() {
-        MyQueue queue = new MyQueue();
-        assertTrue( "Queue is initialized empty", queue.getHead() == null);
-    }
-
-    @Test
-    public void CanCallIsEmpty(){
-        MyQueue queue = new MyQueue();
-        assertTrue( "Queue is initialized empty", queue.isEmpty());
-    }
+    // Node Test
 
     @Test
     public void canCreateNode(){
         MyNode node = new MyNode(3);
         assertNotNull("can create new Node object", node);
+    }
+
+    // Queue Tests
+
+    @Test
+    public void queueIsInitializedEmpty() {
+        MyQueue queue = new MyQueue();
+        assertTrue( "Queue is initialized empty", queue.getHead() == null);
+    }
+
+    @Test
+    public void queueCanCallIsEmpty(){
+        MyQueue queue = new MyQueue();
+        assertTrue( "Queue is initialized empty", queue.isEmpty());
     }
 
     @Test
@@ -38,7 +42,7 @@ public class AppTest {
     }
 
     @Test
-    public void canPeek(){
+    public void canPeekQueue(){
         MyQueue queue = new MyQueue();
         queue.add(5);
         assertEquals( "Can peek at first item in queue", 5, queue.peek());
@@ -60,7 +64,7 @@ public class AppTest {
         queue.add(5);
         queue.add(7);
         queue.add(9);
-        assertEquals("Node added to queue has correct value", 5, queue.remove());
+        assertEquals("Node removed from queue has correct value", 5, queue.remove());
     }
 
     @Test
@@ -70,6 +74,62 @@ public class AppTest {
         queue.remove();
         assertNull("Tail is null when last item is removed", queue.getTail());
         assertNull("Head is null when last item is removed", queue.getHead());
+
+    }
+
+    // Stack Tests
+
+    @Test
+    public void StackIsInitializedEmpty() {
+        MyStack stack = new MyStack();
+        assertTrue( "Stack is initialized empty", stack.getTop() == null);
+    }
+
+    @Test
+    public void stackCanCallIsEmpty(){
+        MyStack stack = new MyStack();
+        assertTrue( "Stack is initialized empty", stack.isEmpty());
+    }
+
+    @Test
+    public void addItemToStack() {
+        MyStack stack = new MyStack();
+        stack.push(5);
+        assertNotNull( "Node added to empty stack becomes head", stack.getTop());
+    }
+
+    @Test
+    public void canPeekStack(){
+        MyStack stack = new MyStack();
+        stack.push(5);
+        assertEquals( "Can peek at first item in stack", 5, stack.peek());
+    }
+
+    @Test
+    public void canPeekEmptyStack(){
+        MyStack stack = new MyStack();
+        assertNull("Peeking empty stack returns null", stack.peek());
+    }
+
+    @Test
+    public void removeItemFromStack(){
+//        Integer first = 5;
+//        Integer second = 7;
+//        Integer third = 9;
+//        Integer expected = 5;
+        MyStack stack = new MyStack();
+        stack.push(5);
+        stack.push(7);
+        stack.push(9);
+        assertEquals("Node removed from stack has correct value", 9, stack.pop());
+    }
+
+    @Test
+    public void removeLastItemFromStack(){
+        MyStack stack = new MyStack();
+        stack.push(5);
+        stack.pop();
+        assertNull("Top is null when last item is removed", stack.getTop());
 
     }
 
