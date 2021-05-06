@@ -56,10 +56,6 @@ public class AppTest {
 
     @Test
     public void removeItemFromQueue(){
-//        Integer first = 5;
-//        Integer second = 7;
-//        Integer third = 9;
-//        Integer expected = 5;
         MyQueue queue = new MyQueue();
         queue.add(5);
         queue.add(7);
@@ -113,10 +109,6 @@ public class AppTest {
 
     @Test
     public void removeItemFromStack(){
-//        Integer first = 5;
-//        Integer second = 7;
-//        Integer third = 9;
-//        Integer expected = 5;
         MyStack stack = new MyStack();
         stack.push(5);
         stack.push(7);
