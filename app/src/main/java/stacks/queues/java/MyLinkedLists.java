@@ -55,7 +55,7 @@ public class MyLinkedLists {
         } else {
             MyNode current = head;
             while (current.next != null) {
-                if (current.value == value) {
+                if (current.data == value) {
                     return curIndex;
                 } else {
                     curIndex++;
@@ -70,7 +70,7 @@ public class MyLinkedLists {
         MyNode previous = null;
         MyNode current = head;
         while (current.next != null) {
-            if (current.value != value) {
+            if (current.data != value) {
                 previous = current;
                 current = current.next;
             } else {
