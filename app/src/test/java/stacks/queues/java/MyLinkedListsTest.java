@@ -1,4 +1,4 @@
-package MyLinkedLists;
+package stacks.queues.java;
 
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
